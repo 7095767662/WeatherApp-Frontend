@@ -1,0 +1,121 @@
+
+<div class="search-container">
+    <input type="text" id="citySearchInput" placeholder="Enter city name..." [(ngModel)]="cityName">
+    <button (click)="searchCity(cityName)">
+        Search
+      </button>
+</div>
+
+<button (click)="hello()">click me</button>
+<div class="outer_body">
+    <div class="inner_body">
+        <div class="left_side_weather">
+            <div class="location">
+                <span class="city">Bangalore</span>
+                <span class="date">{{currentDate | date}}</span>
+            </div>
+            <div class="temperature">
+                <p class="celcius">{{CurrentTemp}}&deg;</p>
+                <div class="humidity">       
+                    <p><i class="fa-solid fa-wind"></i> &nbsp; 6.1 mph</p>
+                    <p><i class="fa-solid fa-droplet"></i>&nbsp;&nbsp;&nbsp; 90 %</p>
+                </div>
+            </div>
+            <div *ngIf="temperature >=20 && temperature<25">
+                <span class="weather_status"><i class="fa-solid fa-cloud"></i>&nbsp; Cloudy</span>
+            </div>
+            <div *ngIf="temperature >25">
+                <span class="weather_status"><i class="fa-solid fa-sun"></i> &nbsp;Sunny</span>
+            </div>
+            <div class="card_container">
+                <div class="card card0">
+                    <span>Today</span>
+                    <span>{{temperature}}&deg;</span>
+                    <span>Mist</span>
+                </div>
+                <div class="card card1">
+                    <span>Today</span>
+                    <span>{{temperature}}&deg;</span>
+                    <span>Mist</span>
+                </div>
+                <div class="card card2">
+                    <span>Today</span>
+                    <span>{{temperature}}&deg;</span>
+                    <span>Mist</span>
+                </div>
+                <div class="card card3">
+                    <span>Today</span>
+                    <span>{{temperature}}&deg;</span>
+                    <span>Mist</span>
+                </div>
+                <div class="card card4">
+                    <span>Today</span>
+                    <span>{{temperature}}&deg;</span>
+                    <span>Mist</span>
+                </div>
+                <div class="card card5">
+                    <span>Today</span>
+                    <span>{{temperature}}&deg;</span>
+                    <span>Mist</span>
+                </div>
+
+            </div>
+        
+
+        </div>
+
+
+
+        <div class="right_side_weather">
+            <div class="top_section">
+                <p class="wish">Good Afternoon</p>
+                <p class="time">{{ currentTime | date: 'hh:mm a' }}</p>
+            </div>
+            <div class="hourly_forcast">
+                <h3 class="text-center fs-4">Hourly Forcast</h3>
+                <div class="right_card_container">
+                    <div class="card card0">
+                        <span>Today</span>
+                        <span>{{temperature}}&deg;</span>
+                        <span>Mist</span>
+                    </div>
+                    <div class="card card1">
+                        <span>Today</span>
+                        <span>{{temperature}}&deg;</span>
+                        <span>Mist</span>
+                    </div>
+                    <div class="card card2">
+                        <span>Today</span>
+                        <span>{{temperature}}&deg;</span>
+                        <span>Mist</span>
+                    </div>
+                    <div class="card card3">
+                        <span>Today</span>
+                        <span>{{temperature}}&deg;</span>
+                        <span>Mist</span>
+                    </div>
+                    <div class="card card4">
+                        <span>Today</span>
+                        <span>{{temperature}}&deg;</span>
+                        <span>Mist</span>
+                    </div>
+                    <div class="card card5">
+                        <span>Today</span>
+                        <span>{{temperature}}&deg;</span>
+                        <span>Mist</span>
+                    </div>
+    
+                </div>
+            
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
