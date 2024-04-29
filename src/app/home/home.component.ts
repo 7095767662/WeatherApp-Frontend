@@ -26,23 +26,22 @@ export class HomeComponent{
 
   searchCity(cityName: string) {
     this.weatherService.getCoordinates(cityName).subscribe(data => {
-      if (data.length > 0) {
-        const { lat, lon } = data[0];
-        this.weatherService.getWeather(lat, lon).subscribe(weatherData => {
+      if (data.results.length > 0) {
+        const { lat, lng } = data.results[0].geometry.location; // Extract lat and lng
+        this.weatherService.getWeather(lat, lng).subscribe(weatherData => {
           // Handle weather data here
-  
           console.log(weatherData);
           this.CurrentTemp = ((weatherData.main.temp) - 273.15).toFixed(2);
-          this.humidity=(weatherData.main.humidity);
-          this.windSpeed=(weatherData.wind.speed);
-          this.WeatherDescription=(weatherData.weather[0].description);
-
+          this.humidity = weatherData.main.humidity;
+          this.windSpeed = weatherData.wind.speed;
+          this.WeatherDescription = weatherData.weather[0].description;
         });
       } else {
         console.log('City not found');
       }
     });
   }
+  
 
 
    hello(){

@@ -7,10 +7,11 @@ import { Observable } from 'rxjs';
 export class WeatherService {
 
   constructor(private http:HttpClient) { }
+  private GeoapiKey = 'AIzaSyCUAGjCRkMkOH5P27O--WfKczASSUDju_o';
+  private GeoapiUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
 
-  getCoordinates(cityName: string) {
-    const apiKey = '4a5f4d3a3eac90b0ebaaa75a3da53c77'; // Replace with your OpenWeatherMap API key
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+  getCoordinates(city: string) {
+    const url = `${this.GeoapiUrl}?address=${city}&key=${this.GeoapiKey}`;
     return this.http.get<any>(url);
   }
   getWeather(latitude: number, longitude: number) {
