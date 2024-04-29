@@ -11,22 +11,20 @@
     <div class="inner_body">
         <div class="left_side_weather">
             <div class="location">
-                <span class="city">Bangalore</span>
+                <span class="city">{{cityName}}</span>
                 <span class="date">{{currentDate | date}}</span>
             </div>
             <div class="temperature">
                 <p class="celcius">{{CurrentTemp}}&deg;</p>
                 <div class="humidity">       
-                    <p><i class="fa-solid fa-wind"></i> &nbsp; 6.1 mph</p>
-                    <p><i class="fa-solid fa-droplet"></i>&nbsp;&nbsp;&nbsp; 90 %</p>
+                    <p><i class="fa-solid fa-wind"></i> &nbsp; {{windSpeed}} m/s</p>
+                    <p><i class="fa-solid fa-droplet"></i>&nbsp;&nbsp;&nbsp; {{humidity}}%</p>
                 </div>
             </div>
-            <div *ngIf="temperature >=20 && temperature<25">
-                <span class="weather_status"><i class="fa-solid fa-cloud"></i>&nbsp; Cloudy</span>
+            <div>
+                <span class="weather_status"><i class="fa-solid fa-cloud"></i>&nbsp; {{WeatherDescription}}</span>
             </div>
-            <div *ngIf="temperature >25">
-                <span class="weather_status"><i class="fa-solid fa-sun"></i> &nbsp;Sunny</span>
-            </div>
+   
             <div class="card_container">
                 <div class="card card0">
                     <span>Today</span>

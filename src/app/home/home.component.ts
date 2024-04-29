@@ -10,9 +10,13 @@ import { WeatherService } from '../weather.service';
 export class HomeComponent{
   currentDate= new Date();
   CurrentTemp:string="";
+  humidity:string="";
+  windSpeed:string="";
+  WeatherDescription:string="";
   currentTime: Date;
   cityName:string="";
   temperature:number=0;
+
 
 
 
@@ -29,6 +33,9 @@ export class HomeComponent{
   
           console.log(weatherData);
           this.CurrentTemp = ((weatherData.main.temp) - 273.15).toFixed(2);
+          this.humidity=(weatherData.main.humidity);
+          this.windSpeed=(weatherData.wind.speed);
+          this.WeatherDescription=(weatherData.weather[0].description);
 
         });
       } else {
